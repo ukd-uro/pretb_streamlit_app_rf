@@ -27,10 +27,10 @@ st.title('Textgenerator für das prätherapeutische Tumorboard')
 st.header('Bitte Patientenparameter eingeben:')
 
 # Input for patient age
-age = st.number_input('Alter (Jahre):', step=10.0)
+age = st.number_input('Alter (Jahre):', value=65.0, step=10.0)
 
 # Input for patient psa serum level
-psa = st.number_input('PSA (ng/ml):', step=1.0)
+psa = st.number_input('PSA (ng/ml):', value=4.0, step=1.0)
 
 # Input for dre stage
 dre_options = {'cT1': 0, 'cT2a': 1, 'cT2b': 2, 'cT2c': 3, 'cT3a': 4, 'cT3b': 5}
@@ -41,10 +41,10 @@ dre = dre_options[input_dre]
 gleason_sum = st.selectbox('Gleason Score:', ['6', '7', '8', '9', '10'])
 
 # Input for number of positive biopsy cores
-cylinder_pos = st.number_input('Zahl der positiven Stanzzylinder:', step=1.0)
+cylinder_pos = st.number_input('Zahl der positiven Stanzzylinder:', value=2.0,step=1.0)
 
 # Input for overall biopsy cores
-cylinder_max = st.number_input('Zahl der gesamten Stanzzylinder:', step=1.0)
+cylinder_max = st.number_input('Zahl der gesamten Stanzzylinder:', value=2.0,step=1.0)
 
 # Run model prediction
 button_predict = st.button('Prädiktion')
